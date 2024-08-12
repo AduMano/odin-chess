@@ -1,0 +1,78 @@
+Chess, I have no idea how to play this game xD, I see people play this
+and kinda have an idea how pieces move but there are rules that I dont know
+that I have to learn before making this. 
+
+First flow is setting up the Board:
+  the Board will be on 8x8 grid, each cells is empty when the board is built.
+  after building, the board has this code or coordinates where pieces will be placed
+    A-H is from left the right (Horizontal)
+    8-1 is from top to bottom (Vertical)
+
+    | A8 | B8 | C8 | D8 | E8 | F8 | G8 | H8 |
+    | A7 | B7 | C7 | D7 | E7 | F7 | G7 | H7 |
+    | A6 | B6 | C6 | D6 | E6 | F6 | G6 | H6 |
+    | A5 | B5 | C5 | D5 | E5 | F5 | G5 | H5 |
+    | A4 | B4 | C4 | D4 | E4 | F4 | G4 | H4 |
+    | A3 | B3 | C3 | D3 | E3 | F3 | G3 | H3 |
+    | A2 | B2 | C2 | D2 | E2 | F2 | G2 | H2 |
+    | A1 | B1 | C1 | D1 | E1 | F1 | G1 | H1 |
+
+  set the board to translate these coordinates to 2d array to access cells by splitting
+    the coordinates into separate character for example, "C5" will be "C" and "5". so we have
+    "C" and "5", the "5" is the Y axis, so thats the first we need to translate before we access the X axis
+    "C". 5 is the 3rd index or [3] then C is horizontal which is the 2nd index or [2].
+
+  place piece will be a method to place a piece in the board, so thats why we have a translator for the coordinates
+  ill be using a hash to translate those coordinates to get the cell to place a piece in a 2d array.
+
+  build board, using the place piece method, i can place pieces to prepare the board.
+
+  render board, its just a combinations of |, + and = to make a grid display.
+
+  +===+===+===+===+===+===+===+===+
+  | R | H | B | Q | K | B | H | R |
+  +===+===+===+===+===+===+===+===+
+  | P | P | P | P | P | P | P | P |
+  +===+===+===+===+===+===+===+===+
+  |   |   |   |   |   |   |   |   |
+  +===+===+===+===+===+===+===+===+
+  |   |   |   |   |   |   |   |   |
+  +===+===+===+===+===+===+===+===+
+  |   |   |   |   |   |   |   |   |
+  +===+===+===+===+===+===+===+===+
+  |   |   |   |   |   |   |   |   |
+  +===+===+===+===+===+===+===+===+
+  | P | P | P | P | P | P | P | P |
+  +===+===+===+===+===+===+===+===+
+  | R | H | B | Q | K | B | H | R |
+  +===+===+===+===+===+===+===+===+
+
+  thats all for the board
+
+Second is the Pieces:
+  Well.. Piece is a superclass, but... its just a category?
+  Should i implement it as Super and Sub classes or make separate class per piece?
+
+  Implementing a superclass must contain common attributes and methods. So... what are common things
+  in pieces? all of them can move, but thats already given and not that necesarry to emphasize.
+  each piece is unique so... separated class it is?
+
+    King - Moves one square in any direction.
+    Queen - Moves any number of squares diagonally, horizontally, or vertically.
+    Rook - Moves any number of squares horizontally or vertically.
+    Bishop - Moves any number of squares diagonally.
+    Knight - Moves in an ‘L-shape,’ two squares in a straight direction, and then one square perpendicular to that (Knight can jump on opponents piece).
+    Pawn - Moves one square forward, but on its first move, it can move two squares forward. It captures diagonally one square forward.
+
+  These pieces will have their own attributes and behavior like how they move, their location, generate possible legal moves,
+  and their rules
+
+  Thats all for the Pieces
+
+Third is the Game:
+  
+  When the game starts it generates the Board and place the pieces. White will be the first to move a piece
+  It checks the game rules if the game is over or not
+  
+
+    
