@@ -73,6 +73,8 @@ Third is the Game:
   
   When the game starts it generates the Board and place the pieces. White will be the first to move a piece
   It checks the game rules if the game is over or not
+
+  a player picks a piece according to the piece's coordinates then shows the possible movement
   
 
     
